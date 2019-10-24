@@ -1,0 +1,9 @@
+database:
+  host: localhost
+  name: UrlShortener
+  password: postgres
+  port: 5432
+  user: postgres
+server:
+  host: 0.0.0.0
+  port: 8080
