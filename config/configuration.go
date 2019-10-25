@@ -15,7 +15,7 @@ type Configuration struct {
 var instance *Configuration
 var once sync.Once
 
-func GetInstance() (*Configuration, *Configuration) {
+func GetInstance() *Configuration {
 	once.Do(func() {
 		var err error
 		instance, err = initInstance()
@@ -23,7 +23,7 @@ func GetInstance() (*Configuration, *Configuration) {
 			panic(err)
 		}
 	})
-	return instance, nil
+	return instance
 }
 
 
@@ -32,8 +32,8 @@ func initInstance() (*Configuration, error){
 	viper.SetDefault("SERVER.PORT", 8080)
 	viper.SetDefault("DATABASE.HOST", "localhost")
 	viper.SetDefault("DATABASE.NAME", "UrlShortener")
-	viper.SetDefault("DATABASE.USER", "postgres")
-	viper.SetDefault("DATABASE.PASSWORD", "postgres")
+	viper.SetDefault("DATABASE.USER", "urls")
+	viper.SetDefault("DATABASE.PASSWORD", "urlshortener")
 	viper.SetDefault("DATABASE.PORT", 5432)
 
 	viper.AddConfigPath(".")

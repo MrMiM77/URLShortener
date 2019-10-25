@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>url encoder</title>
+</head>
+<body>
+    <div>
+        <h3>
+            input your site
+        </h3>
+        <form action="/encode" method="post" novalidate>
+            <input type="text" name="url">
+            <input type="submit" class="btn btn-success" value="Add new url">
+        </form>
+    </div>
+    <div>
+
+         <li> your url is : {{.Url}}</li>
+    </div>
+</body>
+</html>
